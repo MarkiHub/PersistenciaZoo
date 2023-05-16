@@ -12,11 +12,18 @@ import org.itson.persistencia.interfaces.IEspeciesDAO;
 
 /**
  * Acceso a datos de especies
+ *
  * @author Elkur
  */
 public class EspeciesDAO extends Conn implements IEspeciesDAO {
 
+    /**
+     * Nombre de la coleccion
+     */
     private final String COLECCION = "especies";
+    /**
+     * Coleccion de la base
+     */
     private final MongoCollection<Especie> tilin;
 
     /**
