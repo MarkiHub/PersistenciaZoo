@@ -5,11 +5,15 @@
 package org.itson.persistencia.implementacion;
 
 import ObjNegocio.*;
+import com.mongodb.MongoException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.bson.types.ObjectId;
+import org.itson.persistencia.excepciones.DAOException;
 import org.itson.persistencia.interfaces.IItinerariosDAO;
 
 /**
@@ -29,6 +33,11 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
     private MongoCollection<Itinerario> tilin;
 
     /**
+     * Logger
+     */
+    private static final Logger LOG = Logger.getLogger(ItinerariosDAO.class.getName());
+
+    /**
      * Constructor que inicializa la conexion con la base y obtiene la conexion
      *
      * @param BASE_DATOS Nombre de la base de datos
@@ -45,9 +54,14 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
      * @return Itinerario insertado
      */
     @Override
-    public Itinerario insertar(Itinerario iti) {
-        tilin.insertOne(iti);
-        return iti;
+    public Itinerario insertar(Itinerario iti) throws DAOException {
+        try {
+            tilin.insertOne(iti);
+            return iti;
+        } catch (MongoException e) {
+            Logger.getLogger(ItinerariosDAO.class.getName()).log(Level.SEVERE, null, e);
+            throw new DAOException("Error al insertar el itinerario");
+        }
     }
 
     /**

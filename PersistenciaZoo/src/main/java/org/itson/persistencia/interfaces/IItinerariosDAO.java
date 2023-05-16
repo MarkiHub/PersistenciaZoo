@@ -7,6 +7,7 @@ package org.itson.persistencia.interfaces;
 import ObjNegocio.Itinerario;
 import java.util.List;
 import org.bson.types.ObjectId;
+import org.itson.persistencia.excepciones.DAOException;
 
 /**
  * Interfaz de uso a acceso a datos de itinerarios
@@ -21,7 +22,7 @@ public interface IItinerariosDAO {
      * @param iti Itinerario a insertar
      * @return Itinerario insertado
      */
-    public Itinerario insertar(Itinerario iti);
+    public Itinerario insertar(Itinerario iti) throws DAOException;
 
     /**
      * Consulta los itinerarios del guia que tengan el mismo id dado en el
