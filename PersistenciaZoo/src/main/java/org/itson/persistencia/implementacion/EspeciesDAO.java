@@ -5,9 +5,13 @@
 package org.itson.persistencia.implementacion;
 
 import ObjNegocio.Especie;
+import com.mongodb.MongoSocketOpenException;
 import com.mongodb.client.MongoCollection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.itson.persistencia.excepciones.DAOException;
 import org.itson.persistencia.interfaces.IEspeciesDAO;
 
 /**
@@ -24,16 +28,20 @@ public class EspeciesDAO extends Conn implements IEspeciesDAO {
     /**
      * Coleccion de la base
      */
-    private final MongoCollection<Especie> tilin;
+    private MongoCollection<Especie> tilin;
 
     /**
      * Constructor que inicializa la conexion con la base de datos
      *
      * @param BASE_DATOS
      */
-    public EspeciesDAO(String BASE_DATOS) {
+    public EspeciesDAO(String BASE_DATOS) throws DAOException {
         super(BASE_DATOS);
-        tilin = getBaseDatos().getCollection(COLECCION, Especie.class);
+        try {
+            tilin = getBaseDatos().getCollection(COLECCION, Especie.class);
+        }catch(MongoSocketOpenException e){
+            throw new DAOException("Error al intentar acceder a la base de datos");
+        }
     }
 
     /**

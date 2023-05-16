@@ -6,6 +6,7 @@ package org.itson.persistencia.implementacion;
 
 import ObjNegocio.*;
 import com.mongodb.MongoException;
+import com.mongodb.MongoSocketOpenException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import java.util.LinkedList;
@@ -42,9 +43,14 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
      *
      * @param BASE_DATOS Nombre de la base de datos
      */
-    public ItinerariosDAO(String BASE_DATOS) {
+    public ItinerariosDAO(String BASE_DATOS) throws DAOException {
         super(BASE_DATOS);
-        tilin = getBaseDatos().getCollection(COLECCION, Itinerario.class);
+        try {
+            tilin = getBaseDatos().getCollection(COLECCION, Itinerario.class);
+        } catch (MongoSocketOpenException e) {
+            Logger.getLogger(ItinerariosDAO.class.getName()).log(Level.SEVERE, null, e);
+            throw new DAOException("Error al intentar acceder a la base de datos");
+        }
     }
 
     /**
