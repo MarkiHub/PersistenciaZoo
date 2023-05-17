@@ -54,13 +54,13 @@ public class InsertarDummies extends Conn {
     Habitat habitat6 = new Habitat("Pradera", "Templado", "Hierba alta", Arrays.asList("Europa", "Asia"));
     Habitat habitat7 = new Habitat("Sabana", "Seco", "Vegetación escasa", Arrays.asList("África"));
 
-    Zona zona1 = new Zona(20.0f, "Zona A");
-    Zona zona2 = new Zona(10.0f, "Zona B");
-    Zona zona3 = new Zona(35.0f, "Zona C");
-    Zona zona4 = new Zona(12.0f, "Zona D");
-    Zona zona5 = new Zona(5.0f, "Zona E");
-    Zona zona6 = new Zona(60.0f, "Zona F");
-    Zona zona7 = new Zona(30.0f, "Zona G");
+    Zona zona1 = new Zona(800.0f, "Zona A");
+    Zona zona2 = new Zona(900.0f, "Zona B");
+    Zona zona3 = new Zona(400.0f, "Zona C");
+    Zona zona4 = new Zona(700.0f, "Zona D");
+    Zona zona5 = new Zona(500.0f, "Zona E");
+    Zona zona6 = new Zona(600.0f, "Zona F");
+    Zona zona7 = new Zona(300.0f, "Zona G");
 
     Especie especie1 = new Especie("Panthera leo", "El león es un felino grande y carnívoro que habita en las áreas de sabana", "León", habitat7.getId(), zona1);
     Especie especie2 = new Especie("Canis lupus", "El lobo es un mamífero carnívoro que vive en manadas", "Lobo", habitat5.getId(), zona3);
@@ -84,10 +84,10 @@ public class InsertarDummies extends Conn {
     Especie especie20 = new Especie("Ursus maritimus", "El oso polar es un gran mamífero que se encuentra en las regiones árticas y polares", "Oso polar", habitat5.getId(), zona3);
 
     public void insertarDummies() throws DAOException {
-        if (!guias.find().into(new ArrayList<>()).isEmpty()
-                || !zonas.find().into(new ArrayList<>()).isEmpty()
-                || !habitats.find().into(new ArrayList<>()).isEmpty()
-                || !especies.find().into(new ArrayList<>()).isEmpty()) {
+        if (guias.find().into(new ArrayList<>()).isEmpty()
+                || zonas.find().into(new ArrayList<>()).isEmpty()
+                || habitats.find().into(new ArrayList<>()).isEmpty()
+                || especies.find().into(new ArrayList<>()).isEmpty()) {
             guias.insertMany(Arrays.asList(guia1, guia2, guia3, guia4, guia5, guia6));
             zonas.insertMany(Arrays.asList(zona1, zona2, zona3, zona4, zona5, zona6, zona7));
             habitats.insertMany(Arrays.asList(habitat1, habitat2, habitat3, habitat4, habitat5, habitat6, habitat7));
