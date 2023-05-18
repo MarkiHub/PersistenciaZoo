@@ -108,7 +108,7 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
     @Override
     public List<Itinerario> consultarNombreSimilar(String nombre) {
         List<Itinerario> itinerarios = new LinkedList<>();
-        itinerarios = tilin.find(Filters.regex(".*nombre.*", nombre, "i")).into(itinerarios);
+        itinerarios = tilin.find(Filters.regex("nombre", ".*"+nombre+".*", "i")).into(itinerarios);
         return !itinerarios.isEmpty() ? itinerarios : null;
     }
 }
