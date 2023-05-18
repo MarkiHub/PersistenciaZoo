@@ -41,4 +41,13 @@ public interface IItinerariosDAO {
      * @return Itinerario encontrado
      */
     public Itinerario consultarNombre(String nombre);
+
+    /**
+     * Consulta los itinerarios con un nombre similiar que el del
+     * parametro
+     *
+     * @param nombre Nombre del itinerario a buscar
+     * @return Itinerarios encontrado
+     */
+    public List<Itinerario> consultarNombreSimilar(String nombre);
 }
