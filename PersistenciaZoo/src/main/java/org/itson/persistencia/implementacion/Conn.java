@@ -27,7 +27,7 @@ public class Conn {
 
     /**
      *
-     * @param BASE_DATOS
+     * @param BASE_DATOS Nombre de la base
      */
     protected Conn(String BASE_DATOS) {
         this.BASE_DATOS = BASE_DATOS;

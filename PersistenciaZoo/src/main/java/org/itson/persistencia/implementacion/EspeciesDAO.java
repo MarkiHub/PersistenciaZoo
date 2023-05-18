@@ -33,7 +33,7 @@ public class EspeciesDAO extends Conn implements IEspeciesDAO {
     /**
      * Constructor que inicializa la conexion con la base de datos
      *
-     * @param BASE_DATOS
+     * @param BASE_DATOS Nombre de la base
      */
     public EspeciesDAO(String BASE_DATOS) throws DAOException {
         super(BASE_DATOS);
