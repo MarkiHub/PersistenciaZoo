@@ -42,6 +42,7 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
      * Constructor que inicializa la conexion con la base y obtiene la conexion
      *
      * @param BASE_DATOS Nombre de la base de datos
+     * @throws org.itson.persistencia.excepciones.DAOException Si no se pudo conectar con la base de datos
      */
     public ItinerariosDAO(String BASE_DATOS) throws DAOException {
         super(BASE_DATOS);
@@ -58,6 +59,7 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
      *
      * @param iti Itinerario a insertar
      * @return Itinerario insertado
+     * @throws org.itson.persistencia.excepciones.DAOException Si no pudo insertar
      */
     @Override
     public Itinerario insertar(Itinerario iti) throws DAOException {

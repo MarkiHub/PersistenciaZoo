@@ -21,6 +21,7 @@ public interface IItinerariosDAO {
      *
      * @param iti Itinerario a insertar
      * @return Itinerario insertado
+     * @throws org.itson.persistencia.excepciones.DAOException Si no puede insertar
      */
     public Itinerario insertar(Itinerario iti) throws DAOException;
 
