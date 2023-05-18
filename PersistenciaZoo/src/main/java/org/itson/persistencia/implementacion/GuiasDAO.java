@@ -16,7 +16,7 @@ import org.itson.persistencia.interfaces.IGuiasDAO;
 /**
  * Clase de acceso a datos de guias
  *
- * @author Elkur
+ * @author kim, marki, elmer, yorx
  */
 public class GuiasDAO extends Conn implements IGuiasDAO {
 

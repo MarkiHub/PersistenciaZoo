@@ -12,7 +12,7 @@ import org.itson.persistencia.excepciones.DAOException;
 /**
  * Interfaz de uso a acceso a datos de itinerarios
  *
- * @author Elkur
+ * @author kim, marki, elmer, yorx
  */
 public interface IItinerariosDAO {
 
@@ -43,8 +43,7 @@ public interface IItinerariosDAO {
     public Itinerario consultarNombre(String nombre);
 
     /**
-     * Consulta los itinerarios con un nombre similiar que el del
-     * parametro
+     * Consulta los itinerarios con un nombre similiar que el del parametro
      *
      * @param nombre Nombre del itinerario a buscar
      * @return Itinerarios encontrado

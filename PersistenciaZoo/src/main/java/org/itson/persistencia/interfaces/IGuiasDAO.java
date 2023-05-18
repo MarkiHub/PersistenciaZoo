@@ -9,13 +9,15 @@ import java.util.List;
 
 /**
  * Interfaz de uso de acceso a datos de guias
- * @author Elkur
+ *
+ * @author kim, marki, elmer, yorx
  */
 public interface IGuiasDAO {
-    
+
     /**
      * Consulta todos los guias de la base de datos
+     *
      * @return Lista de guias
      */
-    public List<Guia> consultar(); 
+    public List<Guia> consultar();
 }

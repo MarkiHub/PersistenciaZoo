@@ -16,7 +16,7 @@ import org.itson.persistencia.excepciones.DAOException;
 /**
  * Clase que inicializa la conexion con la base de datos
  *
- * @author Elkur
+ * @author kim, marki, elmer, yorx
  */
 public class Conn {
 

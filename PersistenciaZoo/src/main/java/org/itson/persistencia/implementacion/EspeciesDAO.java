@@ -17,7 +17,7 @@ import org.itson.persistencia.interfaces.IEspeciesDAO;
 /**
  * Acceso a datos de especies
  *
- * @author Elkur
+ * @author kim, marki, elmer, yorx
  */
 public class EspeciesDAO extends Conn implements IEspeciesDAO {
 

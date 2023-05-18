@@ -20,7 +20,7 @@ import org.itson.persistencia.interfaces.IItinerariosDAO;
 /**
  * Acceso a datos de itinerarios
  *
- * @author Elkur
+ * @author kim, marki, elmer, yorx
  */
 public class ItinerariosDAO extends Conn implements IItinerariosDAO {
 
@@ -97,10 +97,10 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
         itinerarios = tilin.find(Filters.regex("nombre", nombre, "i")).into(itinerarios);
         return !itinerarios.isEmpty() ? itinerarios.get(0) : null;
     }
-    
+
     /**
-     * Consulta los itinerarios con un nombre similiar que el del
-     * parametro, regresa null si no encontro alguno
+     * Consulta los itinerarios con un nombre similiar que el del parametro,
+     * regresa null si no encontro alguno
      *
      * @param nombre Nombre del itinerario a buscar
      * @return Itinerarios encontrado
@@ -108,7 +108,7 @@ public class ItinerariosDAO extends Conn implements IItinerariosDAO {
     @Override
     public List<Itinerario> consultarNombreSimilar(String nombre) {
         List<Itinerario> itinerarios = new LinkedList<>();
-        itinerarios = tilin.find(Filters.regex("nombre", ".*"+nombre+".*", "i")).into(itinerarios);
+        itinerarios = tilin.find(Filters.regex("nombre", ".*" + nombre + ".*", "i")).into(itinerarios);
         return !itinerarios.isEmpty() ? itinerarios : null;
     }
 }

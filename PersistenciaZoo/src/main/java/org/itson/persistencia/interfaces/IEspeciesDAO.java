@@ -9,11 +9,14 @@ import java.util.List;
 
 /**
  * Intefaz de uso de acceso a datos
- * @author Elkur
+ *
+ * @author kim, marki, elmer, yorx
  */
 public interface IEspeciesDAO {
+
     /**
      * Consulta las especies existentes en la base
+     *
      * @return especies encontradas
      */
     public List<Especie> consultar();
