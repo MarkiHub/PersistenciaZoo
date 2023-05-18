@@ -1,5 +1,9 @@
-org\itson\persistencia\interfaces\IEspeciesDAO.class
-org\itson\persistencia\implementacion\Conn.class
 org\itson\persistencia\implementacion\EspeciesDAO.class
 org\itson\persistencia\implementacion\ItinerariosDAO.class
+org\itson\persistencia\interfaces\IEspeciesDAO.class
+org\itson\persistencia\implementacion\Conn.class
+org\itson\persistencia\implementacion\GuiasDAO.class
+org\itson\persistencia\interfaces\IGuiasDAO.class
+org\itson\persistencia\implementacion\InsertarDummies.class
 org\itson\persistencia\interfaces\IItinerariosDAO.class
+org\itson\persistencia\excepciones\DAOException.class
